@@ -16,7 +16,7 @@ int main()
 {
     int px=1,py=1,gx=10,gy=10,opx=px,opy=py,ogx=gx,ogy=gy,score=0,key=0,lives = 4,btime = 0,bx=px,by=py,sx = px, sy = py,totalpips = 0,steps = 0,totalbaits = 0;
     char old_char = ' ';
-       startgame:
+    startgame:
     char world[27][27] =
     {
         {"xxxxxxxxxxxxxxxxxxxxxxxxxx"},
@@ -124,6 +124,7 @@ int main()
         cout << "Lives: " << lives << endl;
         cout << "Total Pips Left: " << totalpips << endl;
         if(btime)cout << "Life Of Bait: " << btime << endl;
+        //for slower gameplay, try Sleep(500)
         Sleep(100);
         if(totalpips == 0){
                 cout << "YOU WON!" << endl;
@@ -148,5 +149,5 @@ int main()
     }
     while(!(key=keyboardcommand()));
     if(key != 5)goto startgame;
-
 }
+
